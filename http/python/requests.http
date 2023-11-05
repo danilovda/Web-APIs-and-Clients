@@ -1,0 +1,12 @@
+@host = http://localhost:3000
+
+GET {{host}}/api/employees
+
+###
+POST {{host}}/api/employees
+Content-Type: application/json
+
+{
+    "firstName": "Steve",
+    "lastName": "Rogers"
+}
