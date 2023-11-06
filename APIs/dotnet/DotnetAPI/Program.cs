@@ -4,12 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors();
+
 string connectionString = builder.Configuration.GetConnectionString("SqlLiteDb") 
     ?? throw new ArgumentNullException("SqlLiteDb is null");
 
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(connectionString));
 
 var app = builder.Build();
+
+app.UseCors(builder => builder    
+    .WithOrigins("http://localhost:4200")
+    .WithMethods("POST", "PUT", "DELETE", "GET")
+    .AllowAnyHeader());
 
 app.UseHttpsRedirection();
 

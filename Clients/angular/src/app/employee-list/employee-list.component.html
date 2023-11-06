@@ -1,0 +1,40 @@
+<h2>Employees</h2>
+<h3>Add employee</h3>
+<form [formGroup]="employeeForm">
+  <label for="firstName">First name:</label>
+  <input
+    id="firstName"
+    type="text"
+    placeholder="Enter first name"
+    formControlName="firstName"
+  />
+  <label for="lastName">Last name:</label>
+  <input
+    id="lastName"
+    type="text"
+    placeholder="Enter last name"
+    formControlName="lastName"
+  />
+  <div></div>
+  <button (click)="addEmployee()" [disabled]="!employeeForm.valid">
+    Add employee
+  </button>
+</form>
+
+<ng-container *ngIf="{ employees: data$ | async } as vm">
+  <div *ngIf="vm.employees; else loading" class="result-grid">
+    <div class="header">
+      <div>Id</div>
+      <div>First name</div>
+      <div>Last name</div>
+    </div>
+    <ng-container *ngFor="let p of vm.employees">
+      <div>{{ p.id }}</div>
+      <div>{{ p.firstName }}</div>
+      <div>{{ p.lastName }}</div>
+    </ng-container>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+</ng-container>
