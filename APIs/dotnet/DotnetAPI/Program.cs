@@ -14,7 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(connectionStrin
 var app = builder.Build();
 
 app.UseCors(builder => builder    
-    .WithOrigins("http://localhost:4200")
+    .WithOrigins("http://localhost:4200", "http://localhost:5160")    
     .WithMethods("POST", "PUT", "DELETE", "GET")
     .AllowAnyHeader());
 
