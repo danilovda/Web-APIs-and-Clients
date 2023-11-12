@@ -1,0 +1,36 @@
+﻿@using WebAppMVC.Controllers;
+@model IEnumerable<Employee>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+<a asp-controller="@nameof(EmployeeController).Replace("Controller", "" )"
+   asp-action="@nameof(EmployeeController.Create)">Добавить</a>
+@{
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>            
+        </tr>
+        @if (Model is not null)
+        {
+            @foreach (var item in Model)
+            {   
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>
+                        @item.LastName
+                    </td>                    
+                </tr>
+            }
+        }
+    </table>
+}
