@@ -41,10 +41,12 @@ The Node.js Web API provides the following endpoints:
 - **GET /api/employees:** Returns a list of employees.
 - **POST /api/employees:** Adds a new employee to the database.
   Example:
+  ```json
   {
     "firstName": "John",
     "lastName": "Doe"
   }
+  ```
 
 ## Additional Information
 
