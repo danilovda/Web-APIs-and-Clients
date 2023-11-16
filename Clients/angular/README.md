@@ -1,27 +1,42 @@
-# EmployeesClient
+# Angular Client Implementation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+## Introduction
 
-## Development server
+Welcome to the Angular client implementation within the Web-APIs-and-Clients project. This component demonstrates client-side functionality using the Angular framework.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+Follow these steps to set up and run the Angular client:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/danilovda/Web-APIs-and-Clients.git
+   ```
 
-## Build
+2. **Navigate to the Angular client directory:**
+   ```bash
+   cd Web-APIs-and-Clients/Clients/angular
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+4. **Run the Angular client:**
+   ```bash
+   ng serve
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   The client will be available at `http://localhost:4200`.
 
-## Running end-to-end tests
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The Angular client provides the following features:
 
-## Further help
+- **EmployeeListComponent:** Displays a list of employees retrieved from the server. Also allows you to add a new employee to the system.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Additional Information
+
+- Adjust the server endpoint in the `src/app/api.service.ts` file if necessary.
+- Explore and modify the code to better understand Angular for front-end development.
